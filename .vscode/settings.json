@@ -1,0 +1,5 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.cmakePath": "/usr/bin/cmake",
+    "cmake.ctestPath": "/usr/bin/cmake"
+}
