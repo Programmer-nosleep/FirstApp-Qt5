@@ -1,30 +1,17 @@
 cmake_minimum_required(VERSION 3.15)
 
-find_package(Qt5 REQUIRED Widgets)
+find_package(Qt6 COMPONENTS Widgets Core Gui REQUIRED)
 
-file(GLOB SOURCE_FILES
-    *.cc
-    **/*.cc
-    **/**/*.cc
-    **/**/**/*.cc
-)
-
-file(GLOB HEADER_FILES
-    *.hh
-    **/*.hh
-    **/**/*.hh
-    **/**/**/*.hh
-)
+add_subdirectory(include)
 
 add_executable(${PROJECT_NAME}
-    ${SOURCE_FILES}
-    ${HEADER_FILES}
+   main.cpp 
 )
 
 target_link_libraries(${PROJECT_NAME}
-    fmt
-    Qt5::Widgets
-    Qt5::Core
-    Qt5::Gui
+  lib
+  Qt6::Widgets
+  Qt6::Core
+  Qt6::Gui
 )
 target_include_directories(${PROJECT_NAME} PRIVATE .)
